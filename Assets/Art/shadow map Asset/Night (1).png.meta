@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 163a55ad7cb5875469f730f14a467265
+guid: 97e8403c84bf2744fab6e73c85266680
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2284943188825397978
-    second: MouseIdle_0
+      213: 8105284230243706363
+    second: Night (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MouseIdle_0
+      name: Night (1)_0
       rect:
         serializedVersion: 2
-        x: 200
-        y: 88
-        width: 233
-        height: 242
+        x: 0
+        y: 0
+        width: 900
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: adad2ed59bfb5bf10800000000000000
-      internalID: 2284943188825397978
+      spriteID: bf560435011cb7070800000000000000
+      internalID: 8105284230243706363
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      MouseIdle_0: 2284943188825397978
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
