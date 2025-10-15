@@ -4,6 +4,7 @@ public class MouseManager : MonoBehaviour
 {
     public Rigidbody2D rb;
     public SpriteRenderer sr;
+    public EnergyBar energyBar;
     public float moveForce;
     public float jumpForce;
     private bool isGrounded = true;
@@ -16,9 +17,11 @@ public class MouseManager : MonoBehaviour
     void Start()
     {
         scenes = new string[] {"Start", "Energy"};
+
     }
     void Update()
     {
+        
         // Input, is the way Unity manages player input, this works for controllers and keyboard//
         //Because these are if condidtions and NOT if else, that means you can do multiple inputs at once
 
@@ -50,7 +53,7 @@ public class MouseManager : MonoBehaviour
                 isFacingRight = false;
             }
         }
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && isGrounded == true)
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && isGrounded == true && energyBar.canJump)
         {
             //Since force is being applied directionally, just make the direcrtion up to make them jumo
             direction = Vector2.up;
@@ -61,14 +64,25 @@ public class MouseManager : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground")){
+        if (collision.gameObject.CompareTag("Ground"))
+        {
             isGrounded = true;
+            if(energyBar.energy > 0.0f)
+            {
+                energyBar.subtractBar(.5f);
+            }
+            
         }
         if (collision.gameObject.CompareTag("Zone"))
         {
 Debug.Log("in zone");
             currentScene++;
             SceneManager.LoadScene(scenes[currentScene]);
+        }
+        if(collision.gameObject.CompareTag("Cookie"))
+        {
+            Destroy(collision.gameObject);
+            energyBar.subtractBar(-4f);
         }
     }
 
