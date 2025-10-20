@@ -1,22 +1,21 @@
+using System;
 using UnityEngine;
 
-public class CatArmMover
+public class CatArmMover : MonoBehaviour 
 {
     //Link to what taught me how to rotate an object in Unity https://gamedevbeginner.com/how-to-rotate-in-unity-complete-beginners-guide/
     void rotationPos()
     {
-        Vector2 rotationPerFramePos = new Vector2(0, 2);
+        int degreesPerSecond = 30;
+        transform.Rotate(new Vector3(0,0, degreesPerSecond) * Time.deltaTime);
     }
     void rotationNeg()
     {
-        Vector2 rotPerFrameNeg = new Vector2(0, -1);
+        int degreesPerSecond = -45;
+        transform.Rotate(new Vector3(0,0, degreesPerSecond) * Time.deltaTime);
     }
-    void rotationCheck()
+    void Update()
     {
-    
-    }
-    void update()
-    {
-        rotationPos();
+        rotationNeg();
     }
 }
