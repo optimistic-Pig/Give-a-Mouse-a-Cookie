@@ -567,6 +567,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 763753177736017748, guid: e50937e82fba77840bf3da64138dde6c, type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 833198155541734540, guid: e50937e82fba77840bf3da64138dde6c, type: 3}
       propertyPath: m_Name
       value: Mouse
