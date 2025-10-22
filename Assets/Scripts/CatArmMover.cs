@@ -17,5 +17,5 @@ public class CatArmMover : MonoBehaviour
     void Update()
     {
         rotationNeg();
-    }
+    }//I have to figure out a way for it to switch directions, I will do that before wednesday. it wont be too hard
 }
