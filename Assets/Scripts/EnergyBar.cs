@@ -6,7 +6,8 @@ public class EnergyBar : MonoBehaviour
     public bool canJump;
     public GameObject bar;
     
-    public void subtractBar(float changeBy){
+    public void subtractBar(float changeBy)
+    {
         energy -= changeBy;
 Debug.Log(energy);
         Vector3 scale = new Vector3 (energy, .5f,1f);
@@ -18,5 +19,9 @@ Debug.Log(energy);
         else if(energy >= 0.0f){
             canJump = true;
         }
+    }
+    public void setEnergy(float newEnergy)
+    {
+        energy = newEnergy;
     }
 }

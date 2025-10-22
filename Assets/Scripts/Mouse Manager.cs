@@ -13,10 +13,11 @@ public class MouseManager : MonoBehaviour
 
     // Update is called once per frame
     private string[] scenes;
-    private int currentScene = 0;
+    public int currentScene = 0;
     void Start()
     {
         scenes = new string[] {"Start", "Energy"};
+        
 
     }
     void Update()
@@ -61,9 +62,17 @@ public class MouseManager : MonoBehaviour
             isGrounded = false;
         }
     }
-
+//Whenever the collider of the mouse touches a different collider this is called, collision is that other collider
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //Check the tag to decide what to d0
+        //Death, is checking if the other collider will kill the player. So an enemy or the death plane
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            //scene manager controlls which scene to load from the possible options
+            SceneManager.LoadScene(scenes[currentScene]);
+        }
+        //If it is ground keep track of the is Grounded boolean which will allow or disallow the player to jump, also to make sure energy is used when you jump
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
@@ -77,6 +86,7 @@ public class MouseManager : MonoBehaviour
         {
 Debug.Log("in zone");
             currentScene++;
+            energyBar.setEnergy(4f);
             SceneManager.LoadScene(scenes[currentScene]);
         }
         if(collision.gameObject.CompareTag("Cookie"))
@@ -85,5 +95,4 @@ Debug.Log("in zone");
             energyBar.subtractBar(-4f);
         }
     }
-
 }
