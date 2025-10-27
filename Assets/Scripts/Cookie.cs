@@ -6,7 +6,6 @@ public class Cookie : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-Debug.Log("In collison: cookie");
         if(collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
