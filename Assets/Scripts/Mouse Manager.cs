@@ -1,23 +1,23 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 public class MouseManager : MonoBehaviour
 {
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     public EnergyBar energyBar;
+    public ScenesManager sm;
     public float moveForce;
     public float jumpForce;
     private bool isGrounded = true;
     private bool isFacingRight = true;
     private Vector2 direction;
-
-    // Update is called once per frame
-    private string[] scenes;
-    public int currentScene = 0;
+   
     void Start()
     {
-        scenes = new string[] {"Start", "Energy"};
+        energyBar.setEnergy(4f);
+        sm = GameObject.Find("SceneManager").GetComponent<ScenesManager>();
+Debug.Log(sm.currentScene);
     }
+
     void Update()
     {
         
@@ -82,7 +82,7 @@ public class MouseManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Death"))
         {
             //scene manager controlls which scene to load from the possible options
-            SceneManager.LoadScene(scenes[currentScene]);
+            sm.ReloadScene();
         }
         //If it is ground keep track of the is Grounded boolean which will allow or disallow the player to jump, also to make sure energy is used when you jump
         if (collision.gameObject.CompareTag("Ground"))
@@ -91,10 +91,7 @@ public class MouseManager : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Zone"))
         {
-Debug.Log("in zone");
-            currentScene++;
-            energyBar.setEnergy(4f);
-            SceneManager.LoadScene(scenes[currentScene]);
+            sm.NextScene();
         }
     }
 }
