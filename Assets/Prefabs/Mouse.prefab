@@ -130,8 +130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 763753177736017748}
-  sr: {fileID: 0}
-  energyBar: {fileID: 0}
+  sr: {fileID: 77497061719142528}
+  energyBar: {fileID: 4764947194327935713, guid: ef51ebe17d4ab8441aa4efff1a630a8c, type: 3}
+  sm: {fileID: 5887613719016377993, guid: f4de3bb69f131834694b1c089c60d4f8, type: 3}
   moveForce: 0.5
   jumpForce: 65
 --- !u!61 &7195571582397039485
