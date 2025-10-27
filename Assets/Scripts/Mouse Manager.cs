@@ -17,8 +17,6 @@ public class MouseManager : MonoBehaviour
     void Start()
     {
         scenes = new string[] {"Start", "Energy"};
-        
-
     }
     void Update()
     {
@@ -27,39 +25,53 @@ public class MouseManager : MonoBehaviour
         //Because these are if condidtions and NOT if else, that means you can do multiple inputs at once
 
         //Checks if the player is pressing D
-        if(Input.GetKey(KeyCode.D))
+        if(Input.anyKey)
         {
-            //Makes sure the direction of the force applied to the rigid body is to the right
-            direction = Vector2.right;
-            //Using that right direction, multiplies force in taht direction, then multiplies gradually with impulse
-            rb.AddForce(direction.normalized * moveForce, ForceMode2D.Impulse);
-            //Checks if the mouse if facing right, if not then flip the mouse
-            if(isFacingRight == false)
+            if(Input.GetKey(KeyCode.D))
             {
-                //sr is Sprite Renderer which we pull into the game scene from the mouse game object, we can do this because of the "public" advative
-                sr.flipX = true;
-                //Makes it so next time it will not flip it if the player is already moving right
-                isFacingRight = true;
+                //Makes sure the direction of the force applied to the rigid body is to the right
+                direction = Vector2.right;
+                //Using that right direction, multiplies force in taht direction, then multiplies gradually with impulse
+                rb.AddForce(direction.normalized * moveForce, ForceMode2D.Impulse);
+                //Checks if the mouse if facing right, if not then flip the mouse
+                if(isFacingRight == false)
+                {
+                    //sr is Sprite Renderer which we pull into the game scene from the mouse game object, we can do this because of the "public" advative
+                    sr.flipX = true;
+                    //Makes it so next time it will not flip it if the player is already moving right
+                    isFacingRight = true;
+                }
+            }
+            if(Input.GetKey(KeyCode.A))
+            {
+                //Make direction left
+                direction = Vector2.left;
+                rb.AddForce(direction.normalized * moveForce, ForceMode2D.Impulse);
+                //If facing right, make the mlouse face left
+                if(isFacingRight == true)
+                {
+                    sr.flipX = false;
+                    isFacingRight = false;
+                }
+            }
+            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && isGrounded == true && energyBar.canJump)
+            {
+                //Since force is being applied directionally, just make the direcrtion up to make them jumo
+                direction = Vector2.up;
+                rb.AddForce(direction.normalized * jumpForce, ForceMode2D.Impulse);
+                isGrounded = false;
+                if(energyBar.energy > 0.0f)
+                {
+                    energyBar.subtractBar(.5f);
+                }
             }
         }
-        if(Input.GetKey(KeyCode.A))
+        else
         {
-            //Make direction left
-            direction = Vector2.left;
-            rb.AddForce(direction.normalized * moveForce, ForceMode2D.Impulse);
-            //If facing right, make the mlouse face left
-            if(isFacingRight == true)
+            if(isGrounded)
             {
-                sr.flipX = false;
-                isFacingRight = false;
+                rb.AddForce(Vector2.down.normalized*moveForce*5, ForceMode2D.Impulse);
             }
-        }
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && isGrounded == true && energyBar.canJump)
-        {
-            //Since force is being applied directionally, just make the direcrtion up to make them jumo
-            direction = Vector2.up;
-            rb.AddForce(direction.normalized * jumpForce, ForceMode2D.Impulse);
-            isGrounded = false;
         }
     }
 //Whenever the collider of the mouse touches a different collider this is called, collision is that other collider
@@ -75,12 +87,7 @@ public class MouseManager : MonoBehaviour
         //If it is ground keep track of the is Grounded boolean which will allow or disallow the player to jump, also to make sure energy is used when you jump
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
-            if(energyBar.energy > 0.0f)
-            {
-                energyBar.subtractBar(.5f);
-            }
-            
+            isGrounded = true;  
         }
         if (collision.gameObject.CompareTag("Zone"))
         {
@@ -88,11 +95,6 @@ Debug.Log("in zone");
             currentScene++;
             energyBar.setEnergy(4f);
             SceneManager.LoadScene(scenes[currentScene]);
-        }
-        if(collision.gameObject.CompareTag("Cookie"))
-        {
-            Destroy(collision.gameObject);
-            energyBar.subtractBar(-4f);
         }
     }
 }
