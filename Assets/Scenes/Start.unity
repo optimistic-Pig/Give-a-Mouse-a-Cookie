@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: moveTo
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4764947194327935713, guid: ef51ebe17d4ab8441aa4efff1a630a8c, type: 3}
+      propertyPath: canJump
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9160819848724870387, guid: ef51ebe17d4ab8441aa4efff1a630a8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
@@ -587,6 +591,10 @@ PrefabInstance:
       propertyPath: energyBar
       value: 
       objectReference: {fileID: 1647252406}
+    - target: {fileID: 4343661311262634515, guid: e50937e82fba77840bf3da64138dde6c, type: 3}
+      propertyPath: moveForce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5819608283843024197, guid: e50937e82fba77840bf3da64138dde6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.57
