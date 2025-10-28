@@ -66,8 +66,10 @@ Debug.Log(sm.currentScene);
                 }
             }
         }
+        //If no player input is detected
         else
         {
+            //If you hit the side of a ground tagged object will trigger stronger gravity
             if(isGrounded)
             {
                 rb.AddForce(Vector2.down.normalized*moveForce*5, ForceMode2D.Impulse);
@@ -87,7 +89,10 @@ Debug.Log(sm.currentScene);
         //If it is ground keep track of the is Grounded boolean which will allow or disallow the player to jump, also to make sure energy is used when you jump
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;  
+            if(gameObject.transform.position.y > collision.gameObject.transform.position.y)
+            {
+                isGrounded = true;  
+            }
         }
         if (collision.gameObject.CompareTag("Zone"))
         {
