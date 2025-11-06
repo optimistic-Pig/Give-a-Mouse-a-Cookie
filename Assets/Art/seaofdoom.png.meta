@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      seaofdoom_0: 5069398436894444175
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
