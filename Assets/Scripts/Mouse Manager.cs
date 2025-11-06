@@ -2,6 +2,7 @@ using UnityEngine;
 public class MouseManager : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Collider2D cr;
     public SpriteRenderer sr;
     public EnergyBar energyBar;
     public ScenesManager sm;
@@ -97,6 +98,11 @@ Debug.Log(sm.currentScene);
         if (collision.gameObject.CompareTag("Zone"))
         {
             sm.NextScene();
+        }
+        if(collision.gameObject.CompareTag("End"))
+        {
+            cr.isTrigger = true;
+            gameObject.transform.transform.localRotation = Quaternion.Euler(0, 0, 90);
         }
     }
 }

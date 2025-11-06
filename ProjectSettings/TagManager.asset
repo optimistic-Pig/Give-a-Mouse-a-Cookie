@@ -9,6 +9,7 @@ TagManager:
   - Cookie
   - Death
   - Shadow
+  - End
   layers:
   - Default
   - TransparentFX

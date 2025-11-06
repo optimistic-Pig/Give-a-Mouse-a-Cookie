@@ -265,8 +265,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "This is the story of a mouse who\n\tate a perfectly ordinary cookie."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de2403372134ddf468280060f4b2e108, type: 2}
-  m_sharedMaterial: {fileID: 3582357642263534942, guid: de2403372134ddf468280060f4b2e108, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -470,8 +470,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "If you leave a mouse alone, to it's \n\town devices to find a meal,"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de2403372134ddf468280060f4b2e108, type: 2}
-  m_sharedMaterial: {fileID: 3582357642263534942, guid: de2403372134ddf468280060f4b2e108, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -994,8 +994,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "until it finds a bite to eat,\n\tand it's energy is restored."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de2403372134ddf468280060f4b2e108, type: 2}
-  m_sharedMaterial: {fileID: 3582357642263534942, guid: de2403372134ddf468280060f4b2e108, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1130,8 +1130,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "it will search and scurry,\n\tlooking both high and low"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de2403372134ddf468280060f4b2e108, type: 2}
-  m_sharedMaterial: {fileID: 3582357642263534942, guid: de2403372134ddf468280060f4b2e108, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1861,8 +1861,8 @@ MonoBehaviour:
 
     W or SPACE to Jump'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de2403372134ddf468280060f4b2e108, type: 2}
-  m_sharedMaterial: {fileID: 3582357642263534942, guid: de2403372134ddf468280060f4b2e108, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1963,6 +1963,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4343661311262634515, guid: e50937e82fba77840bf3da64138dde6c, type: 3}
+      propertyPath: cr
+      value: 
+      objectReference: {fileID: 2347793474107771642}
+    - target: {fileID: 4343661311262634515, guid: e50937e82fba77840bf3da64138dde6c, type: 3}
       propertyPath: sm
       value: 
       objectReference: {fileID: 1497710192}
@@ -2030,6 +2034,11 @@ PrefabInstance:
       addedObject: {fileID: 519420032}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e50937e82fba77840bf3da64138dde6c, type: 3}
+--- !u!61 &2347793474107771642 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7195571582397039485, guid: e50937e82fba77840bf3da64138dde6c, type: 3}
+  m_PrefabInstance: {fileID: 2347793474107771641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3105725576068738964
 PrefabInstance:
   m_ObjectHideFlags: 0
